@@ -14,7 +14,7 @@ for i in range(0,2):
     card=dealcard()
     computer_cards.append(card)
 print(f"Your cards are {user_cards}")
-print(f"Opponent's cards are {computer_cards}")
+print(f"Opponent's one card is {computer_cards[0]}")
 def calculate_score(cards):
     total_sum =sum(cards)
     return total_sum
@@ -47,11 +47,13 @@ if user_total<21:
         comp_total =calculate_score(computer_cards)
 if blackjack_comp ==0:
     print("You Lose")
-if blackjack_user ==0:
+elif blackjack_user ==0:
     print("You Win")    
-if comp_total>21:
+elif comp_total>21:
     print("You Win")
-if comp_total>user_total:
+elif user_total>21:
+    print("You Lose")   
+elif comp_total>user_total:
     print("You Lose")
 elif user_total>comp_total:
     print("You Win")
